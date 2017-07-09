@@ -1,16 +1,12 @@
-#**Traffic Sign Recognition** 
+#**Traffic Sign Classifier** 
 
 ##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
 
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
+* Load the data set (training, evaluation and test data)
+* Explore, summarize and visualize the training data set
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
