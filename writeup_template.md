@@ -87,26 +87,25 @@ The NN Model is the LeNet with 32x32x1 dimension for input and 43x1 dimension fo
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+The best results in accuracy was achieved with the following training parameters:
+
+EPOCHS = 20
+BATCH_SIZE = 64
+rate = 0.002
+optimizer = tf.train.AdamOptimizer()
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+Using the normalization method suggested: (pixel-128)/128 did not work for me, because I had serious problems the run a dataset with 32x32x3 on my computer. I tried to run the model on AWS, but finally I decided to greyscale the data and reduce dimension to 32x32x1.
+After performing greyscale on the data, I did the noramlization by the known method: X_train_norm = X_train_gray/255 * 0.8 + 0.1
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+A increas of accurancy was also performed by intrducing dropout to the fully connected layers. The best solution was created with keep_prob: 0.5
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+With changing the number of Epochs to 20 and thre rate to 0.002, I was able to get a accuracy > 0.93 with the training data and a accuracy of < 0.93 on the validation set.
+
+Finally I replaced the acitvation function RELU with ELU, to speed up the model. The final value of accuracy was:
+
+keep_prob: 0.5
  
 
 ###Test a Model on New Images
