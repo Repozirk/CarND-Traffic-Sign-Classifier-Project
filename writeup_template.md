@@ -40,11 +40,11 @@ My [project code](https://github.com/Repozirk/CarND-Traffic-Sign-Classifier-Proj
 By using the numpy library, I got this statistics out of the traffic
 signs data set:
 
-Number of training examples = 34799
-Number of testing examples = 12630
-Number of Validation examples = 4410
-Image data shape = (32, 32, 3)
-Number of classes = 43
+*Number of training examples = 34799
+*Number of testing examples = 12630
+*Number of Validation examples = 4410
+*Image data shape = (32, 32, 3)
+*Number of classes = 43
 
 
 ####2. Include an exploratory visualization of the dataset.
@@ -89,10 +89,10 @@ The NN Model is the LeNet with 32x32x1 dimension for input and 43x1 dimension fo
 
 The best results in accuracy was achieved with the following training parameters:
 
-EPOCHS = 20
-BATCH_SIZE = 64
-rate = 0.002
-optimizer = tf.train.AdamOptimizer()
+*EPOCHS = 20
+*BATCH_SIZE = 64
+*rate = 0.002
+*optimizer = tf.train.AdamOptimizer()
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -142,10 +142,10 @@ As alredy mentioned before, the NN has problems with pictures where the traffic 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The NN fails on follwing traffic signs:
-0: Speed Limit 30km/h: Unfortunately it is not in the top 5 softmax probabilities
-7: Pedestrians: In this case the NN has a very high probability for the General Caution traffic sign. The reason for this might be the angle and the size of the traffic sign. Pedestrians is on place 5 of softmax probabilities
-8: Children crossing: Unfortunately it is not in the top 5 sofmax probabilities
-9: No passing: No passing is on place 2 of softmax probabilities, but with a poor sofmax probability
+*0: Speed Limit 30km/h: Unfortunately it is not in the top 5 softmax probabilities
+*7: Pedestrians: In this case the NN has a very high probability for the General Caution traffic sign. The reason for this might be the angle and the size of the traffic sign. Pedestrians is on place 5 of softmax probabilities
+*8: Children crossing: Unfortunately it is not in the top 5 sofmax probabilities
+*9: No passing: No passing is on place 2 of softmax probabilities, but with a poor sofmax probability
 
 [image5]: ./softmax_probabilities_of_my_images.png "Softmax Probabilities"
 
