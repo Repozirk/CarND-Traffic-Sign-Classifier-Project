@@ -20,6 +20,7 @@ The goals / steps of this project are the following:
 [image3]: ./my_images.png "My Images"
 [image4]: ./prediction_of_my_images.png "Prediction of My Images"
 [image5]: ./softmax_probabilities_of_my_images.png "Softmax Probabilities"
+[image6]: ./resize_my_images.png "Resize My Images"
 
 
 ## Rubric Points
@@ -122,20 +123,31 @@ I provided 10 German traffic signs that I found on the web:
 
 Converting "my pictures" to 32x32 pixels by cv2.resize(img, (32, 32)) returned following picture quality:
 
+[image6]: ./resize_my_images.png "Resize My Images"
+
+Difficult to classifiy are pictures, where the traffic sign is small compared to the image area. Because of the 32x32 size, samll traffic signs will not have the characteristic markers known by the NN. So the NN will fail on too small signs compared toe the picture area. 
+Another challange are traffic signs which are shown in a different angle. A solution for this problem would be arifical training data created by image manipulations.
 
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
+[image4]: ./prediction_of_my_images.png "Prediction of My Images"
 
+The Test Accuracy = 0.600 using "My Pictures"
 
-
-
+As alredy mentioned before, the NN has problems with pictures where the traffic sign is small compared to the picture area. The NN also fails on pictures showing the traffic sign with an angle. I tink more training date with the properties as described would improve the performance of the NN. Fortunately these additional training data could be created by manipulated pictures from the original training set.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
+The NN fails on follwing traffic signs:
+0: Speed Limit 30km/h: Unfortunately it is not in the top 5 softmax probabilities
+7: Pedestrians: In this case the NN has a very high probability for the General Caution traffic sign. The reason for this might be the angle and the size of the traffic sign. Pedestrians is on place 5 of softmax probabilities
+8: Children crossing: Unfortunately it is not in the top 5 sofmax probabilities
+9: No passing: No passing is on place 2 of softmax probabilities, but with a poor sofmax probability
 
+[image5]: ./softmax_probabilities_of_my_images.png "Softmax Probabilities"
 
 
 
