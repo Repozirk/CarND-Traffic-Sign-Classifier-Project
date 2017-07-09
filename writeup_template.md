@@ -118,11 +118,11 @@ Test Accuracy = 0.944
 
 I provided 10 German traffic signs that I found on the web:
 
-[image3]: ./my_images.png "My Images"
+![alt text][image3]
 
 Converting "my pictures" to 32x32 pixels by cv2.resize(img, (32, 32)) returned following picture quality:
 
-[image6]: ./resize_my_images.png "Resize My Images"
+![alt text][image6]
 
 Difficult to classifiy are pictures, where the traffic sign is small compared to the image area. Because of the 32x32 size, samll traffic signs will not have the characteristic markers known by the NN. So the NN will fail on too small signs compared toe the picture area. 
 Another challange are traffic signs which are shown in a different angle. A solution for this problem would be arifical training data created by image manipulations.
@@ -132,7 +132,7 @@ Another challange are traffic signs which are shown in a different angle. A solu
 
 Here are the results of the prediction:
 
-[image4]: ./prediction_of_my_images.png "Prediction of My Images"
+![alt text][image4]
 
 The Test Accuracy = 0.600 using "My Pictures"
 
@@ -146,7 +146,7 @@ The NN fails on follwing traffic signs:
 * 8: Children crossing: Unfortunately it is not in the top 5 sofmax probabilities
 * 9: No passing: No passing is on place 2 of softmax probabilities, but with a poor sofmax probability
 
-[image5]: ./softmax_probabilities_of_my_images.png "Softmax Probabilities"
+![alt text][image5]
 
 
 
