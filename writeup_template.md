@@ -40,11 +40,11 @@ My [project code](https://github.com/Repozirk/CarND-Traffic-Sign-Classifier-Proj
 By using the numpy library, I got this statistics out of the traffic
 signs data set:
 
-*Number of training examples = 34799
-*Number of testing examples = 12630
-*Number of Validation examples = 4410
-*Image data shape = (32, 32, 3)
-*Number of classes = 43
+* Number of training examples = 34799
+* Number of testing examples = 12630
+* Number of Validation examples = 4410
+* Image data shape = (32, 32, 3)
+* Number of classes = 43
 
 
 ####2. Include an exploratory visualization of the dataset.
@@ -106,7 +106,6 @@ With changing the number of Epochs to 20 and thre rate to 0.002, I was able to g
 Finally I replaced the acitvation function RELU with ELU, to speed up the model. 
 
 The final value of accuracy on the Validatin Data was: 
-EPOCH 20 ...
 Validation Accuracy = 0.967
 
 The final value of accuracy on the Test Data was: 
@@ -142,10 +141,10 @@ As alredy mentioned before, the NN has problems with pictures where the traffic 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The NN fails on follwing traffic signs:
-*0: Speed Limit 30km/h: Unfortunately it is not in the top 5 softmax probabilities
-*7: Pedestrians: In this case the NN has a very high probability for the General Caution traffic sign. The reason for this might be the angle and the size of the traffic sign. Pedestrians is on place 5 of softmax probabilities
-*8: Children crossing: Unfortunately it is not in the top 5 sofmax probabilities
-*9: No passing: No passing is on place 2 of softmax probabilities, but with a poor sofmax probability
+* 0: Speed Limit 30km/h: Unfortunately it is not in the top 5 softmax probabilities
+* 7: Pedestrians: In this case the NN has a very high probability for the General Caution traffic sign. The reason for this might be the angle and the size of the traffic sign. Pedestrians is on place 5 of softmax probabilities
+* 8: Children crossing: Unfortunately it is not in the top 5 sofmax probabilities
+* 9: No passing: No passing is on place 2 of softmax probabilities, but with a poor sofmax probability
 
 [image5]: ./softmax_probabilities_of_my_images.png "Softmax Probabilities"
 
